@@ -1,0 +1,44 @@
+PATH
+  remote: .
+  specs:
+    repper (1.0.0)
+      rainbow (~> 3.1)
+      regexp_parser (~> 2.4)
+      tabulo (~> 2.8)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.5.0)
+    rainbow (3.1.1)
+    rake (13.0.6)
+    regexp_parser (2.4.0)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-support (3.11.0)
+    tabulo (2.8.0)
+      tty-screen (= 0.8.1)
+      unicode-display_width (= 2.1.0)
+    tty-screen (0.8.1)
+    unicode-display_width (2.1.0)
+
+PLATFORMS
+  arm64-darwin-21
+
+DEPENDENCIES
+  rake (~> 13.0)
+  repper!
+  rspec (~> 3.0)
+
+BUNDLED WITH
+   2.4.0.dev
