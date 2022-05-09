@@ -1,5 +1,7 @@
-# Repper
-<img alt='Rapper necklace with dollar pendant' src='https://user-images.githubusercontent.com/10758879/167485870-5c49284d-a783-453e-8be0-a3597c2ef97c.png' style='float: left; margin: -84px 0 0 90px; height: 53px;' />
+<h1>
+  Repper
+  <img alt='Rapper necklace with dollar pendant' src='https://user-images.githubusercontent.com/10758879/167485870-5c49284d-a783-453e-8be0-a3597c2ef97c.png' height='46' align='right' />
+</h1>
 
 Repper is a regular expression pretty printer for Ruby.
 
@@ -17,19 +19,7 @@ There are also a few customization options.
 
 `require 'repper/core_ext/regexp'` in your `~/.irbrc` or `~/.pryrc` to override `Regexp#inspect` and automatically use `repper` to display Regexps:
 
-<pre style='background-color: #111; color: #DDD;'>
-irb(main):001:0> /re[\p{pe}\r]$/
-=>
- <span style='color:red'>/</span>
-   <span style='color:red'>ra</span>           literal
-   <span style='color:cyan'>[</span>            character set
-     <span style='color:red'>p</span>          literal
-     <span style='color:cyan'>\p{pe}</span>     close punctuation property
-     <span style='color:red'>\r</span>         carriage escape
-   <span style='color:cyan'>]</span>            character set
-   <span style='color:yellow'>$</span>            eol anchor
- <span style='color:red'>/</span>
-</pre>
+<img width="313" alt="screenshot1" src="https://user-images.githubusercontent.com/10758879/167497359-e5bb94db-1382-465b-903a-3e114721b7a6.png">
 
 ### Extending Kernel#pp
 
@@ -60,10 +50,7 @@ Repper.format = :structured
 
 Or pick a format on a case-by-case basis:
 
-<pre style='background-color: #111; color: #DDD;'>
-irb(main):001:0> Repper.call(/re[\p{pe}\r]$/, format: :inline)
-=> <span style='color:red'>/</span><span style='color:red'>re</span><span style='color:cyan'>[</span><span style='color:red'>p</span><span style='color:cyan'>\p{pe}</span><span style='color:red'>\r</span><span style='color:cyan'>]</span><span style='color:yellow'>$</span><span style='color:red'>/</span>
-</pre>
+<img width="445" alt="screenshot2" src="https://user-images.githubusercontent.com/10758879/167497599-105f39c7-91e0-4954-bce3-d04ad7266695.png">
 
 Or create your own format:
 
@@ -81,7 +68,10 @@ The color theme can also be set globally or passed on call:
 
 ```ruby
 Repper.theme = :monokai # a nicer theme, if the terminal supports it
+```
+<img width="316" alt="screenshot3" src="https://user-images.githubusercontent.com/10758879/167497895-0cdc017f-5c77-4b15-afaa-207f7eb887cc.png">
 
+```ruby
 Repper.call(/foo/, theme: nil) # render without colors
 ```
 
