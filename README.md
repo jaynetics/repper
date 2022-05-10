@@ -18,7 +18,7 @@ There are also a few customization options.
 
 `require 'repper/core_ext/regexp'` in your `~/.irbrc` or `~/.pryrc` to override `Regexp#inspect` and automatically use `repper` to display Regexps:
 
-<img width="444" alt="screenshot1" src="https://user-images.githubusercontent.com/10758879/167497359-e5bb94db-1382-465b-903a-3e114721b7a6.png">
+<img width="475" alt="screenshot1" src="https://user-images.githubusercontent.com/10758879/167719748-60f4013a-c8d4-4a62-843a-d9f27057bcd3.png">
 
 ### Extending Kernel#pp
 
@@ -49,7 +49,7 @@ Repper.format = :structured
 
 Or pick a format on a case-by-case basis:
 
-<img width="630" alt="screenshot2" src="https://user-images.githubusercontent.com/10758879/167497599-105f39c7-91e0-4954-bce3-d04ad7266695.png">
+<img width="711" alt="screenshot2" src="https://user-images.githubusercontent.com/10758879/167719567-ae8ee42f-839e-4ce4-af56-a139044d3436.png">
 
 Or create your own format:
 
@@ -68,7 +68,8 @@ The color theme can also be set globally or passed on call:
 ```ruby
 Repper.theme = :monokai # a nicer theme, if the terminal supports it
 ```
-<img width="450" alt="screenshot3" src="https://user-images.githubusercontent.com/10758879/167497895-0cdc017f-5c77-4b15-afaa-207f7eb887cc.png">
+
+<img width="478" alt="screenshot3" src="https://user-images.githubusercontent.com/10758879/167719807-9170ba92-48d1-4669-a05d-a72f962b961d.png">
 
 ```ruby
 Repper.call(/foo/, theme: nil) # render without colors
