@@ -1,7 +1,6 @@
-<h1>
-  Repper
-  <img alt='Rapper necklace with dollar pendant' src='https://user-images.githubusercontent.com/10758879/167485870-5c49284d-a783-453e-8be0-a3597c2ef97c.png' height='46' align='right' />
-</h1>
+<img alt='Rapper necklace with dollar pendant' src='https://user-images.githubusercontent.com/10758879/167485870-5c49284d-a783-453e-8be0-a3597c2ef97c.png' height='64' align='right' />
+
+# Repper
 
 Repper is a regular expression pretty printer for Ruby.
 
