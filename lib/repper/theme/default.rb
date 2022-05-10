@@ -4,6 +4,7 @@ module Repper
       anchor:        :yellow,
       annotation:    nil, # only for annotated formats
       assertion:     :green,
+      background:    nil, # use terminal default
       backref:       :blue,
       conditional:   :green,
       escape:        :red,

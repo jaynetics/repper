@@ -4,6 +4,7 @@ module Repper
       anchor:        '#FD971F',
       annotation:    '#75715E', # only for annotated formats
       assertion:     '#A6E22E',
+      # background:    '#272822', # looks OK on light terminals w/o bg
       backref:       '#66D9EF',
       conditional:   '#A6E22E',
       escape:        '#F92672',

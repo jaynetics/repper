@@ -6,7 +6,8 @@ module Repper
         :indented_text,
         styler: ->(_, string, cell) { theme.colorize(string, cell.source.type) }
       )
-      table.pack.to_s
+      text = table.pack.to_s
+      theme.add_background(text)
     end
   end
 end

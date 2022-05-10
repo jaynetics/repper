@@ -1,7 +1,8 @@
 module Repper
   module Format
     Inline = ->(elements, theme) do
-      elements.map { |el| theme.colorize(el.text, el.type) }.join
+      text = elements.map { |el| theme.colorize(el.text, el.type) }.join
+      theme.add_background(text)
     end
   end
 end
