@@ -11,3 +11,22 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+def basic_regexp
+  /[a]/
+end
+
+def complex_regexp
+  /
+    foo+?
+    \K
+    (?=bar)
+    [\p{ascii}&&\x42-\u1234[^a-z]]
+    ( qux (?:baz|bla) )
+    (?(1)foo|bar)
+    (?i)
+    (?~baz)
+    (?m-i:.\X\t\b) # comment
+    \k<1>
+  /x
+end

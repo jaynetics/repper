@@ -1,7 +1,9 @@
-require_relative "repper/element"
+require_relative "repper/codemod"
+require_relative "repper/command"
 require_relative "repper/errors"
 require_relative "repper/format"
-require_relative "repper/parser"
+require_relative "repper/token"
+require_relative "repper/tokenizer"
 require_relative "repper/theme"
 require_relative "repper/version"
 
@@ -14,18 +16,18 @@ module Repper
     end
 
     def render(regexp, format: self.format, theme: self.theme)
-      elements = Parser.call(regexp)
-      format   = Format.cast(format)
-      theme    = Theme.cast(theme)
-      format.call(elements, theme)
+      tokens = Tokenizer.call(regexp)
+      format = Format.cast(format)
+      theme  = Theme.cast(theme)
+      format.call(tokens, theme)
     end
 
-    def theme=(theme)
-      @theme = Theme.cast(theme)
+    def format=(arg)
+      @format = Format.cast(arg)
     end
 
-    def format=(format)
-      @format = Format.cast(format)
+    def theme=(arg)
+      @theme = Theme.cast(arg)
     end
   end
 

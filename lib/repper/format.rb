@@ -3,8 +3,9 @@ module Repper
     def self.cast(arg)
       case arg
       when ::Proc             then arg
+      when :x                 then Format::Extended
       when ::Symbol, ::String then Format.const_get(arg.capitalize) rescue nil
-      when false, nil         then Format::Plain
+      when false, nil         then Format::Inline
       end || raise(Repper::ArgumentError, "unknown format #{arg.inspect}")
     end
   end

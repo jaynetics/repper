@@ -1,7 +1,8 @@
 module Repper
   module Format
-    Structured = ->(elements, theme) do
-      table = Tabulo::Table.new(elements.reject(&:whitespace?), **TABULO_STYLE)
+    # A structured format with colorization.
+    Structured = ->(tokens, theme) do
+      table = Tabulo::Table.new(tokens.reject(&:whitespace?), **TABULO_STYLE)
       table.add_column(
         :indented_text,
         styler: ->(_, string, cell) { theme.colorize(string, cell.source.type) }

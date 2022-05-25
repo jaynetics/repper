@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Janosch Müller"]
   spec.email = ["janosch84@gmail.com"]
 
-  spec.summary = "Regexp pretty printer for Ruby"
+  spec.summary = "Regexp pretty printer and formatter for Ruby"
   spec.homepage = "https://github.com/jaynetics/repper"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"

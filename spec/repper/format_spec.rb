@@ -9,9 +9,13 @@ RSpec.describe Repper::Format do
       expect(Repper::Format.cast(:inline)).to equal Repper::Format::Inline
     end
 
-    it 'returns Format::Plain when given nil or false' do
-      expect(Repper::Format.cast(nil)).to equal Repper::Format::Plain
-      expect(Repper::Format.cast(false)).to equal Repper::Format::Plain
+    it 'returns Format::Extended when given :x' do
+      expect(Repper::Format.cast(:x)).to equal Repper::Format::Extended
+    end
+
+    it 'returns Format::Inline when given nil or false' do
+      expect(Repper::Format.cast(nil)).to equal Repper::Format::Inline
+      expect(Repper::Format.cast(false)).to equal Repper::Format::Inline
     end
 
     it 'raises ArgumentError when given an unknown name' do

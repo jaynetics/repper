@@ -2,7 +2,7 @@
 
 # Repper
 
-Repper is a regular expression pretty printer for Ruby.
+Repper is a regular expression pretty printer and formatter for Ruby.
 
 ## Installation
 
@@ -10,19 +10,27 @@ Repper is a regular expression pretty printer for Ruby.
 
 ## Usage
 
-`repper` can be integrated into the REPL (e.g. IRB) through core extensions or used manually.
+`repper` can be integrated into the REPL (e.g. IRB) through core extensions for Regexp pretty-printing, integrated into editors to format Regexps, or called manually.
 
 There are also a few customization options.
 
-### Full REPL integration (recommended)
+### REPL integration
+
+#### Via Regexp#inspect (recommended)
 
 `require 'repper/core_ext/regexp'` in your `~/.irbrc` or `~/.pryrc` to override `Regexp#inspect` and automatically use `repper` to display Regexps:
 
 <img width="475" alt="screenshot1" src="https://user-images.githubusercontent.com/10758879/167719748-60f4013a-c8d4-4a62-843a-d9f27057bcd3.png">
 
-### Extending Kernel#pp
+#### Via Kernel#pp
 
 Alternatively, `require 'repper/core_ext/kernel'` to make the `pp` command give nicer output for Regexps (which will look like above by default).
+
+### Editor integration
+
+Use [vscode-repper](https://github.com/jaynetics/vscode-repper) to format Regexps in VSCode.
+
+![vscode-repper](https://user-images.githubusercontent.com/10758879/170892739-e2f408f2-e239-4b13-8d28-c14fb7a9dbb9.gif)
 
 ### Using Repper manually
 
@@ -35,11 +43,13 @@ Repper.render(/foo/) # returns the pretty print String
 
 #### Customizing the format
 
-The default format is the annotated, indented format shown above.
+Multiple formats are available out of the box:
 
-If you want to see the indented structure without annotations, use the `:structured` format.
-
-If you only want colorization you can use the `:inline` format.
+- `:annotated` is the default, verbose format, shown above
+- `:inline` adds only colorization and does not restructure the Regexp
+- `:structured` is like `:annotated`, just without annotations
+- `:x` (or `:extended`) returns a lightly formatted but equivalent Regexp
+  - this format is used for the repper executable and [vscode-repper](https://github.com/jaynetics/vscode-repper)
 
 You can change the format globally:
 
@@ -56,7 +66,7 @@ Or create your own format:
 ```ruby
 require 'csv'
 
-csv_format = ->(elements, _theme) { elements.map(&:text).to_csv }
+csv_format = ->(tokens, _theme) { tokens.map(&:text).to_csv }
 Repper.render(/re[\p{pe}\r]$/, format: csv_format)
 => "/,re,[,\\p{pe},\\r,],$,/\n"
 ```

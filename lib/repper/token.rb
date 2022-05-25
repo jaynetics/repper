@@ -1,12 +1,25 @@
 module Repper
-  Element = Struct.new(:type, :subtype, :level, :text, :id, keyword_init: true) do
+  Token = Struct.new(:type, :subtype, :level, :text, :id, keyword_init: true) do
     def indented_text
-      inlined_text = text.gsub(/[\n\r\t\v]/) { |ws| ws.inspect.delete(?") }
       "#{'  ' * level}#{inlined_text}"
+    end
+
+    def inlined_text
+      if comment?
+        text.strip
+      else
+        text
+          .gsub(/(?<!\\) /, '\\ ')
+          .gsub(/[\n\r\t\v]/) { |ws| ws.inspect.delete(?") }
+      end
     end
 
     def whitespace?
       subtype == :whitespace
+    end
+
+    def comment?
+      subtype == :comment
     end
 
     def annotation
