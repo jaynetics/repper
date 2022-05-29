@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+...
+
+## [1.1.0] - 2022-05-29
+
 ### Added
 
 - codemod capability and corresponding `exe/repper` executable
