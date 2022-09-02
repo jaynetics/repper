@@ -1,6 +1,8 @@
 require 'regexp_parser'
 
 module Repper
+  # Uses Regexp::Parser to get the AST of a Regexp, and turns that AST
+  # into a flat Array of visual elements that match the Regexp notation.
   module Tokenizer
     module_function
 
@@ -11,8 +13,6 @@ module Repper
       raise e.extend(Repper::Error)
     end
 
-    # Turn Regexp::Parser AST back into a flat Array of visual elements
-    # that match the Regexp notation.
     def flatten(exp, acc = [], delimiters: nil, flags: nil)
       # Add opening entry.
       exp.is?(:root) && acc << make_token(exp, delimiters[0])

@@ -1,5 +1,5 @@
 module Repper
-  # Service object for exe/repper
+  # Service object for exe/repper. Formats Ruby code with Repper::Codemod.
   module Command
     module_function
 

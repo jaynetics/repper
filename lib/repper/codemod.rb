@@ -1,5 +1,7 @@
 module Repper
-  # Formatter for Ruby code containing Regexp literals
+  # Formatter for Ruby code containing Regexp literals.
+  # Takes Ruby code, finds included Regexps (both // and %r style),
+  # formats them, and returns the updated Ruby code.
   module Codemod
     module_function
 

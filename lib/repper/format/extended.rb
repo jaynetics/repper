@@ -23,10 +23,10 @@ module Repper
         # keep comments in line, too, but with padding
         elsif tok.comment?
           acc << " #{theme.colorize(tok.inlined_text, tok.type)}"
-        # render root start as wtokl as empty root end in same line
+        # render root start, as well as end of empty root, without linebreak
         elsif tok.subtype == :root && (prev.nil? || prev.subtype == :root)
           acc << theme.colorize(tok.text, tok.type)
-        # tokse, if root is not empty, ensure x-flag is present at end
+        # else, if root is not empty, ensure x-flag is present at end
         elsif tok.subtype == :root
           acc << "\n#{theme.colorize(tok.text.sub(/x?\z/, 'x'), tok.type)}"
         # render other tokens on their own lines for an indented structure,
