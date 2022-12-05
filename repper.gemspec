@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Regexp pretty printer and formatter for Ruby"
   spec.homepage = "https://github.com/jaynetics/repper"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.7.0"
+  spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/jaynetics/repper"
@@ -25,6 +25,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rainbow", "~> 3.1"
-  spec.add_dependency "regexp_parser", "~> 2.4"
+  spec.add_dependency "regexp_parser", "~> 2.6"
   spec.add_dependency "tabulo", "~> 2.8"
 end

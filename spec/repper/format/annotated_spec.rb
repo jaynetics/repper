@@ -13,18 +13,18 @@ RSpec.describe Repper::Format::Annotated do
         o              literal
         +?             one or more quantifier
         \K             keep-mark lookbehind
-        (?=            lookahead assertion
+        (?=            lookahead
           bar          literal
-        )              lookahead assertion
+        )              lookahead
         [              character set
             \p{ascii}  ascii property
           &&           intersection
               \x42     hex escape
-            -          range
+            -          character range
               \u1234   codepoint escape
             [^         character set
                 a      literal
-              -        range
+              -        character range
                 z      literal
             ]          character set
         ]              character set
@@ -51,10 +51,10 @@ RSpec.describe Repper::Format::Annotated do
           .            match-all
           \X           xgrapheme type
           \t           tab escape
-          \b           word boundary anchor
+          \b           word boundary
         )              options group
         # comment      comment
-        \k<1>          number ref backref
+        \k<1>          backreference
       /x
     EOS
   end

@@ -24,10 +24,10 @@ module Repper
         elsif tok.comment?
           acc << " #{theme.colorize(tok.inlined_text, tok.type)}"
         # render root start, as well as end of empty root, without linebreak
-        elsif tok.subtype == :root && (prev.nil? || prev.subtype == :root)
+        elsif tok.root? && (prev.nil? || prev.root?)
           acc << theme.colorize(tok.text, tok.type)
         # else, if root is not empty, ensure x-flag is present at end
-        elsif tok.subtype == :root
+        elsif tok.root?
           acc << "\n#{theme.colorize(tok.text.sub(/x?\z/, 'x'), tok.type)}"
         # render other tokens on their own lines for an indented structure,
         # e.g. groups, alternations, anchors, assertions, ...
