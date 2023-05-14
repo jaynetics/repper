@@ -2,6 +2,10 @@
 
 # Repper
 
+[![Gem Version](https://badge.fury.io/rb/repper.svg)](http://badge.fury.io/rb/repper)
+[![Build Status](https://github.com/jaynetics/repper/actions/workflows/main.yml/badge.svg)](https://github.com/jaynetics/repper/actions)
+[![Coverage](https://codecov.io/gh/jaynetics/repper/branch/main/graph/badge.svg?token=0993K9I8VC)](https://codecov.io/gh/jaynetics/repper)
+
 Repper is a regular expression pretty printer and formatter for Ruby.
 
 ## Installation

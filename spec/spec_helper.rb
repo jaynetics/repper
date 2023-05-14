@@ -1,3 +1,10 @@
+if RUBY_VERSION.start_with?('3.2')
+  require 'simplecov'
+  require 'simplecov-cobertura'
+  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+  SimpleCov.start
+end
+
 require "repper"
 require_relative "support/matchers"
 

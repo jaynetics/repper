@@ -53,4 +53,13 @@ RSpec.describe Repper::Format::Structured do
       /x
     EOS
   end
+
+  it 'represents literal n/r/t/v whitespace with escapes' do
+    result = Repper.render(/#{"\n"}/, format: :structured)
+    expect(result).to have_raw_text <<~'EOS'
+      /
+        \n
+      /
+    EOS
+  end
 end
