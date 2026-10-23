@@ -1,6 +1,8 @@
 ## [Unreleased]
 
-...
+### Fixed
+
+- correct indentation when using newer `regexp_parser` versions
 
 ## [1.1.0] - 2022-05-29
 

@@ -18,7 +18,9 @@ module Repper
       exp.is?(:root) && acc << Token.new(exp, delimiters[0])
 
       # Ignore nesting of invisible intermediate branches for better visuals.
-      exp.is?(:sequence) && exp.nesting_level -= 1
+      if exp.is?(:sequence)
+        exp.each_expression(true) { |child| child.nesting_level -= 1 }
+      end
 
       exp.parts.each do |part|
         if part.instance_of?(::String)
