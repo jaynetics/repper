@@ -1,4 +1,4 @@
-if RUBY_VERSION.start_with?('3.2')
+if RUBY_VERSION.start_with?('4.0')
   require 'simplecov'
   require 'simplecov-cobertura'
   SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
