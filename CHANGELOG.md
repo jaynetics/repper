@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [1.1.1] - 2026-10-23
+
 ### Fixed
 
 - correct indentation when using newer `regexp_parser` versions
