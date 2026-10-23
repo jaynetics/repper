@@ -1,4 +1,4 @@
-# This extension does not include itself automatically,
+# This extension does not enable itself automatically,
 # require 'repper/core_ext/regexp' to do so.
 module Repper
   ALREADY_COLORED_MARK = :@__already_colored__

@@ -1,4 +1,4 @@
-if RUBY_VERSION.start_with?('4.0')
+if RUBY_VERSION.start_with?('4.0') # match version in CI workflow yml
   require 'simplecov'
   require 'simplecov-cobertura'
   SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter

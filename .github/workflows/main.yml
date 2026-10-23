@@ -13,7 +13,7 @@ jobs:
     name: Ruby ${{ matrix.ruby }}
     strategy:
       matrix:
-        ruby: ["2.6", "3.2", "4.0"]
+        ruby: ["2.7", "3.2", "4.0"]
 
     steps:
       - uses: actions/checkout@v7
@@ -25,6 +25,6 @@ jobs:
       - name: Run the default task
         run: bundle exec rake
       - uses: codecov/codecov-action@v7
-        if: matrix.ruby == '4.0'
+        if: matrix.ruby == '4.0' # match version in spec_helper.rb:1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}

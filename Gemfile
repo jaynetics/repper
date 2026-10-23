@@ -5,6 +5,8 @@ gemspec
 
 # gem 'regexp_parser', path: '../regexp_parser'
 
+gem "irb"
+gem "pry"
 gem "rake", "~> 13.0"
 gem "rspec", "~> 3.0"
 gem "simplecov-cobertura"
