@@ -26,4 +26,5 @@ jobs:
         run: bundle exec rake
       - uses: codecov/codecov-action@v7
         if: matrix.ruby == '4.0'
-        token: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
