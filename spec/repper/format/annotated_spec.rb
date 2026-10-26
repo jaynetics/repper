@@ -33,7 +33,9 @@ RSpec.describe Repper::Format::Annotated do
           (?:          passive group
               baz      literal
             |          alternation
-              bla      literal
+              bl       literal
+              a        literal
+              ?        zero or one quantifier
           )            passive group
         )              capture group 1
         (?             conditional

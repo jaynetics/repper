@@ -19,7 +19,10 @@ module Repper
 
       # Ignore nesting of invisible intermediate branches for better visuals.
       if exp.is?(:sequence)
-        exp.each_expression(true) { |child| child.nesting_level -= 1 }
+        exp.each_expression do |subexp|
+          subexp.nesting_level -= 1
+          subexp.quantifier.nesting_level -= 1 if subexp.quantifier
+        end
       end
 
       exp.parts.each do |part|

@@ -29,7 +29,7 @@ def complex_regexp
     \K
     (?=bar)
     [\p{ascii}&&\x42-\u1234[^a-z]]
-    ( qux (?:baz|bla) )
+    ( qux (?:baz|bla?) )
     (?(1)foo|bar)
     (?i)
     (?~baz)

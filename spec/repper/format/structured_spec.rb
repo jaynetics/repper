@@ -28,7 +28,9 @@ RSpec.describe Repper::Format::Structured do
           (?:
               baz
             |
-              bla
+              bl
+              a
+              ?
           )
         )
         (?

@@ -17,7 +17,7 @@ RSpec.describe Repper::Format::Extended do
           (?:
               baz
             |
-              bla
+              bla?
           )
         )
         (?(1)
