@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [1.1.2] - 2026-10-26
+
 ### Fixed
 
 - fix indentation of some quantifiers with newer `regexp_parser` versions
